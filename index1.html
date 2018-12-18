@@ -1,0 +1,502 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Find you Calaric intake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans|Roboto:400,700' rel='stylesheet' type='text/css'>
+    <style media="screen">
+    *, *:before, *:after, {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: white;
+      font-family: 'Roboto', 'Droid Sans';
+      font-size: 100%;
+      color: limegreen;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+    }
+
+    h2 {
+      margin: 0 0 .5em;
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    label {
+      font-size: 1.25em;
+    }
+
+    ul {
+      margin: 0 0 .5em;
+    }
+
+    li {
+      padding: .5em;
+      font-size: 1.25em;
+    }
+
+    a {
+      text-decoration: none;
+      color: limegreen;
+    }
+
+    section {
+      text-align: center;
+      padding: 1em 0;
+      width: 90%;
+      margin: 0 auto;
+      clear: both;
+    }
+
+    button {
+      border: none;
+      border-radius: .5em;
+      background-color: white;
+      font-size: 1em;
+      padding: 1em 2em;
+      max-width: 75%;
+      margin: .5em auto;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      color: limegreen;
+    }
+
+    button#bf {
+      display: inline-block;
+    }
+
+    input {
+      border-radius: .75em;
+      text-align: center;
+      display: inline-block;
+      width: auto;
+      padding: 1em .5em;
+      margin: .25em;
+      background-color: white;
+      color: limegreen;
+      font-family: 'Roboto', 'Droid Sans';
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: white;
+      color: limegreen;
+    }
+
+    .button-select {
+      background-color: #282828;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .inactive {
+      background-color: limegreen;
+      color: white;
+      transition: all .75s ease;
+      -webkit-transition: all .75s ease;
+      -moz-transition: all .75s ease;
+    }
+
+    .pa-factor label {
+      display: block;
+    }
+
+    .cals-macs ul {
+      list-style-type: none;
+      text-align: center;
+    }
+
+    #title {
+      text-transform: uppercase;
+    }
+    /*--------- Media Queries --------*/
+    @media (min-width: 350px) {
+      button, input {
+        font-size: 1.25em;
+      }
+      button {
+        padding: 1em;
+      }
+      input {
+        padding: 1em .5em;
+      }
+      h1 {
+        font-size: 2.5em;
+      }
+      h2 {
+        font-size: 2.25em;
+      }
+      label, li {
+        font-size: 1.75em;
+      }
+      p {
+        font-size: 1.5em;
+      }
+    }
+
+    @media (min-width: 500px) {
+      button {
+        padding: 1.5em;
+      }
+      label, li {
+        font-size: 2em;
+      }
+      #title {
+        font-size: 3em;
+      }
+    }
+
+    @media (min-width: 700px) {
+      #title {
+        font-size: 3.5em;
+      }
+    }
+
+    @media (min-width: 800px) {
+      #title {
+        font-size: 4em;
+        padding: 1em 0 0;
+      }
+      button {
+        display: inline-block;
+        padding: 1.5em;
+      }
+      input {
+        display: inline-block;
+        padding: 1em .5em;
+      }
+    }
+    .bf-goal, .mg-goal, .ma-goal, .yes, .no{
+      color: limegreen;
+      background-color: white;
+    }
+    #body-fat, #weight-yes, #gender, #feet, #inches, #age, #weight-no{
+      color: limegreen;
+      opacity: 0.8;
+      background-color: transparent;
+    }
+    .overlay {
+       height: 100%;
+       width: 0;
+       position: fixed;
+       z-index: 1;
+       top: 0;
+       left: 0;
+       background-color: rgb(0,0,0);
+       background-color: rgba(0,0,0, 0.9);
+       overflow-x: hidden;
+       transition: 0.5s;
+   }
+
+   .overlay-content {
+       position: relative;
+       top: 25%;
+       width: 100%;
+       text-align: center;
+       margin-top: 30px;
+   }
+
+   .overlay a {
+       padding: 8px;
+       text-decoration: none;
+       font-size: 36px;
+       color: #818181;
+       display: block;
+       transition: 0.3s;
+   }
+
+   .overlay a:hover, .overlay a:focus {
+       color: #f1f1f1;
+   }
+
+   .overlay .closebtn {
+       position: absolute;
+       top: 20px;
+       right: 45px;
+       font-size: 60px;
+   }
+
+   @media screen and (max-height: 450px) {
+     .overlay a {font-size: 20px}
+     .overlay .closebtn {
+       font-size: 40px;
+       top: 15px;
+       right: 35px;
+     }
+   }
+   .menu{
+               z-index: 1;
+             position: fixed;
+           top: 8%;
+       right: 2.5%;
+       transform: scale(2);
+           }
+
+    </style>
+  </head>
+  <body>
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+          <a href="index1.html">Service</a>
+          <a href="index.php?logout='1'" >Logout</a>
+        </div>
+        </div>
+    <span class="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+    <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+    <section id="main">
+      <h1 id="title">Calculate your calories</h1>
+      <section class="fitness-goal">
+        <h2>Do you want to</h2>
+        <button name="goals" class="bf-goal" type="button" value="lose body fat">Lose Weight</button>
+        <button name="goals" class="mg-goal" type="button "value="gain muscle">Gain Muscle</button>
+        <button name="goals" class="ma-goal" type="button" value="maintain weight">Maintain Weight</button>
+      </section>
+      <section class="bf">
+        <h2>Do you know my body fat percentage</h2>
+        <button name="bb" class="yes" id="bf" type="button">Yes</button>
+        <button name="bb" class="no" id="bf" type="button">No</button>
+      </section>
+      <section class="body-fat-yes">
+        <input name="be" type="number" id="body-fat" placeholder="Body Fat %">
+        <input name="be" type="number" id="weight-yes" placeholder="Weight in lbs.">
+      </section>
+      <section class="body-fat-no">
+      <label>Male <input name="gender" id="gender" type="radio" name="gender" value="male"></label>
+      <label>Female <input name="gender" id="gender" type="radio" name="gender" value="female"></label>
+      </section>
+      <section class="body-fat-no">
+        <input name="age" type="number" id="age" placeholder="Age" min="1" max="100">
+        <input name="weight" type="number" id="weight-no" placeholder="Weight in lbs." min="1" max="999">
+      </section>
+      <section class="body-fat-no">
+        <input name="feet" type="number" id="feet" placeholder="Feet" min="1" max="10">
+        <input name="inch" type="number" id="inches" placeholder="Inches" min="1" max="12">
+      </section>
+      <section class="pa-factor">
+        <h2>Do you exercise regulary?</h2>
+        <label>0 days a week <input type="radio" name="pa" class="pa" value="1.2"></label>
+        <label>1-2 days a week <input type="radio" name="pa" class="pa"  value="1.375"></label>
+        <label>3-4 days a week <input type="radio" name="pa" class="pa" value="1.55"></label>
+        <label>5-6 days a week <input type="radio" name="pa" class="pa" value="1.725"></label>
+        <label>5-7 days a week as an athlete <input type="radio" name="pa" class="pa" value="1.9"></label>
+      </section>
+      <section class="pa-factor">
+        <h2>How many meals do you consume every day?</h2>
+        <input type="number" id="meal-count" placeholder="4" min="1" max="10" name="meal">
+      </section>
+      <section>
+        <button name="calc" class="calculate" type="button">Calculate</button>
+      </section>
+      <section  class="result">
+        <h2>To <span class="goal-str"></span>, your daily intake should be</h2>
+        <div class="cals-macs">
+          <p class="cals"></p>   <p class="protein"></p>    <p class="carbs"></p>   <p class="fats"></p>
+      </div>
+      </section>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" type="text/javascript"></script>
+    <script  type="text/javascript">
+    $(document).ready(function(){
+        $(".bf").addClass("hidden");
+        $(".result").addClass("hidden");
+        $(".body-fat-yes").addClass("hidden");
+        $(".body-fat-no").addClass("hidden");
+        $(".pa-factor").addClass("hidden");
+        $(".calculate").addClass("hidden");
+
+        var goal = 0;
+        var goal_str = "";
+        var known_bf = undefined;
+
+        $(".bf-goal").on('click touchstart', function(){
+            $(this).removeClass("inactive");
+            $(".mg-goal").addClass("inactive");
+            $(".ma-goal").addClass("inactive");
+            $(".bf").slideDown(500);
+            goal_str = $(this).attr("value");
+            if (goal != 1) {
+                goal = 1;
+                $(".result").addClass("hidden");
+            }
+        });
+
+        $(".mg-goal").on('click touchstart', function(){
+            $(this).removeClass("inactive");
+            $(".bf-goal").addClass("inactive");
+            $(".ma-goal").addClass("inactive");
+            $(".bf").slideDown(500);
+            goal_str = $(this).attr("value");
+            if (goal != 2) {
+                goal = 2;
+                $(".result").addClass("hidden");
+            }
+        });
+
+        $(".ma-goal").on('click touchstart', function(){
+            $(this).removeClass("inactive");
+            $(".bf-goal").addClass("inactive");
+            $(".mg-goal").addClass("inactive");
+            $(".bf").slideDown(500);
+            goal_str = $(this).attr("value");
+            if (goal != 3) {
+                goal = 3;
+                $(".result").addClass("hidden");
+            }
+        });
+
+        $(".yes").on('click touchstart', function(){
+            $(this).removeClass("inactive");
+            $(".no").addClass("inactive");
+            $(".body-fat-yes").slideDown(500);
+            $(".body-fat-no").slideUp(500).fadeOut(500);
+            $(".pa-factor").removeClass("hidden");
+            known_bf = true;
+        });
+
+        $(".no").on('click touchstart', function(){
+            $(this).removeClass("inactive");
+            $(".yes").addClass("inactive");
+            $(".body-fat-no").slideDown(500);
+            $(".body-fat-yes").slideUp(500).fadeOut(500);
+            $(".pa-factor").removeClass("hidden");
+            known_bf = false;
+        });
+
+        $(".pa-factor").change(function(){
+            $(".calculate").slideDown(500);
+        });
+
+        function calc_cals(known_bf, kg, pa, bf, age, ht, gender) {
+            if (known_bf == true) {
+                return Math.round((370+(21.6*(kg-(kg*(bf/100)))))*pa);
+            } else {
+                if (gender == "male") {
+                    return Math.round(((kg*10)+(ht*6.25)-(5*age)+5)*pa);
+                } else {
+                    return Math.round(((kg*10)+(ht*6.25)-(5*age)-161)*pa);
+                }
+            }
+        };
+
+        function calc_macros(cals, goal, known_bf, pa, bf, kg) {
+            var protein = 0;
+            var carbs = 0;
+            var fats = 0;
+            if (known_bf == true) {
+                // If user knowns his BF
+                var ffm = (kg-(kg*(bf/100)));
+                if (goal == 1) {
+                    // Lose bf.
+                    cals = cals-500;
+                    protein = ffm * 2.3;
+                    fats = ffm * .9;
+                    carbs = (cals-(protein*4)-(fats*9))/4;
+                } else if (goal == 2) {
+                    // Muscle gain
+                    cals = cals+250;
+                    protein = ffm * 1.8;
+                    fats = (cals*.25)/9;
+                    carbs = (cals-(protein*4)-(fats*9))/4;
+                } else {
+                    // Maintenance goal
+                    protein = ffm * 2.6;
+                    fats = ffm * 1.1;
+                    carbs = (cals-(protein*4)-(fats*9))/4;
+                }
+            } else {
+                // User doesn't know his BF
+                lbs = kg * 2.2;
+                if (goal == 1) {
+                    // Lose bf.
+                    cals = cals-500;
+                    protein = (lbs * .8);
+                    fats = (lbs * .35);
+                    carbs = (cals-(protein*4)-(fats*9))/4;
+                } else if (goal == 2) {
+                    // Muscle gain
+                    cals = cals+250;
+                    protein = (lbs * .7);
+                    fats = (cals * .25)/9;
+                    carbs = (cals-(protein*4)-(fats*9))/4;
+                } else {
+                    // mainteance
+                    protein = (lbs * .9);
+                    fats = (lbs * .40);
+                    carbs = (cals-(protein*4)-(fats*9))/4;
+                }
+            }
+            return [Math.round(protein), Math.round(carbs), Math.round(fats)]
+        };
+
+        $(".calculate").on('click touchstart', function(){
+            var pa = parseFloat($("input[name='pa']:checked").val());
+            var meal_count = parseInt($("input[id='meal-count']").val());
+            if (known_bf == true) {
+                var wt = $("input[id='weight-yes']").val();
+                var kg = Math.round(wt/2.2);
+                var bf = parseInt($("input[id='body-fat']").val());
+                var result = calc_cals(known_bf, kg, pa, bf);
+                var macros = calc_macros(result, goal, known_bf, pa, bf, kg);
+            } else {
+                var wt = $("input[id='weight-no']").val();
+                var kg = Math.round(wt/2.2);
+                var age = parseInt($("input[id='age']").val());
+                var gender = $("input[name='gender']:checked").val();
+                var feet = parseFloat($("input[id='feet']").val());
+                var inches = parseFloat($("input[id='inches']").val());
+                var ht = Math.round(((feet*12)+inches)*2.54);
+                var result = calc_cals(known_bf, kg, pa, bf=undefined, age, ht, gender);
+                var macros = calc_macros(result, goal, known_bf, pa, bf=undefined, kg);
+            }
+            var pro = macros[0];
+            var pro_per = Math.round(pro/meal_count);
+            var carbs = macros[1];
+            var carbs_per = Math.round(carbs/meal_count);
+            var fats = macros[2];
+            var fats_per = Math.round(fats/meal_count);
+            if (goal == 1) {
+                $(".cals").html(result-500 + " calories");
+                $(".protein").html(pro + " grams of protein" + " or " + pro_per + " grams per meal");
+                $(".carbs").html(carbs + " grams of carbs" + " or " + carbs_per + " grams per meal");
+                $(".fats").html(fats + " grams of fats" + " or " + fats_per + " grams per meal");
+            } else if (goal == 2) {
+                $(".cals").html(result+250 + " calories");
+                $(".protein").html(pro + " grams of protein" + " or " + pro_per + " grams per meal");
+                $(".carbs").html(carbs + " grams of carbs" + " or " + carbs_per + " grams per meal");
+                $(".fats").html(fats + " grams of fats" + " or " + fats_per + " grams per meal");
+            } else {
+                $(".cals").html(result + " calories");
+                $(".protein").html(pro + " grams of protein" + " or " + pro_per + " grams per meal");
+                $(".carbs").html(carbs + " grams of carbs" + " or " + carbs_per + " grams per meal");
+                $(".fats").html(fats + " grams of fats" + " or " + fats_per + " grams per meal");
+            }
+            $(".goal-str").html(goal_str);
+            $(".result").removeClass("hidden");
+        });
+
+    });
+  </script>
+  </body>
+</html>

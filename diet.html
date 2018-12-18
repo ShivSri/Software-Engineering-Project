@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    body {
+      font-size: 120%;
+      background-image: url("coff.jpeg");
+         background-repeat: no-repeat;
+         background-size: cover;
+         font-family: sans-serif;
+         color: white
+         background-attachment: fixed;
+}
+
+h1 {
+text-align: center;
+font-family: Tahoma, Arial, sans-serif;
+color: #06D85F;
+margin: 80px 0;
+}
+
+.box {
+width: 40%;
+margin: 0 auto;
+background: rgba(255,255,255,0.2);
+padding: 35px;
+border: 2px solid #fff;
+border-radius: 20px/50px;
+background-clip: padding-box;
+text-align: center;
+}
+
+.button {
+font-size: 1em;
+padding: 10px;
+color: #fff;
+border: 2px solid #06D85F;
+border-radius: 20px/50px;
+text-decoration: none;
+cursor: pointer;
+transition: all 0.3s ease-out;
+}
+.button:hover {
+background: #06D85F;
+}
+
+.overlay {
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0, 0, 0, 0.7);
+transition: opacity 500ms;
+visibility: hidden;
+opacity: 0;
+}
+.overlay:target {
+visibility: visible;
+opacity: 1;
+}
+
+.popup {
+margin: 70px auto;
+padding: 20px;
+background: #fff;
+border-radius: 5px;
+width: 30%;
+position: relative;
+transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+margin-top: 0;
+color: #333;
+font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+position: absolute;
+top: 20px;
+right: 30px;
+transition: all 200ms;
+font-size: 30px;
+font-weight: bold;
+text-decoration: none;
+color: #333;
+}
+.popup .close:hover {
+color: #06D85F;
+}
+.popup .content {
+max-height: 30%;
+overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+.box{
+  width: 70%;
+}
+.popup{
+  width: 70%;
+}
+}
+    </style>
+  </head>
+  <body>
+    <h1>Types Of Diets</h1>
+<div class="box">
+	<a class="button" href="#popup1">keto</a>
+  <a class="button" href="#popup1">Atkins</a>
+  <a class="button" href="#popup1">GM Diet</a>
+</div>
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Diet</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+      The “keto” in a ketogenic diet comes from the fact that it allows the body to produce small fuel molecules called “ketones”. This is an alternative fuel source for the body, used when blood sugar (glucose) is in short supply.
+
+Ketones are produced if you eat very few carbs (that are quickly broken down into blood sugar) and only moderate amounts of protein (excess protein can also be converted to blood sugar).
+
+The liver produces ketones from fat. These ketones then serve as a fuel source throughout the body, especially for the brain.
+
+The brain is a hungry organ that consumes lots of energy every day, and it can’t run on fat directly. It can only run on glucose… or ketones.
+
+On a ketogenic diet, your entire body switches its fuel supply to run mostly on fat, burning fat 24-7. Insulin levels become very low, and fat burning increases dramatically. It becomes easy to access your fat stores to burn them off.5 This is great if you’re trying to lose weight, but there are also other less obvious benefits, such as less hunger and a steady supply of energy. This may help keep you alert and focused.
+
+When the body produces ketones, it enters a metabolic state called ketosis. The fastest way to get there is by fasting – not eating anything – but nobody can fast forever.
+
+A keto diet, on the other hand, can be eaten indefinitely and also results in ketosis. It has many of the benefits of fasting – including weight loss – without having to fast.
+		</div>
+	</div>
+</div>
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Diet</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Thank to pop me out of that button, but now i'm done so you can close this window.
+		</div>
+	</div>
+</div>
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Diet</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+      The GM diet was supposedly created for the employees of General Motors in 1985.
+
+      It is said to have been developed with help from the US Department of Agriculture and the FDA, with extensive testing at the Johns Hopkins Research Center.
+
+      However, this claim has since been debunked as an urban myth, and the true origins of the GM diet remain unknown.
+
+      The GM diet plan is broken up into seven days, each with strict rules about which food groups you can consume.
+
+      For example, your diet on day two is limited to only vegetables, while on day five you're instructed to eat several whole tomatoes and large portions of meat.
+
+      The diet can supposedly help you:
+
+      Lose up to 15 pounds (6.8 kg) in just one week
+      Get rid of toxins and impurities in your body
+      Improve your digestion
+      Enhance your body's ability to burn fat
+      Proponents of the GM diet say it works because many of the foods included in the diet are low in calories, such as fruits and vegetables.
+
+      This can help promote weight loss by creating a calorie deficit, which is when you consume fewer calories than you burn throughout the day.
+
+      The plan also states that many of the foods in the diet are "negative-calorie foods," meaning they provide fewer calories than they take to digest.
+
+      Many of the foods the diet recommends are also high in water. For this reason, proponents claim that the GM diet can enhance fat loss and help detoxify your body.
+
+      Supporters also say you may repeat the diet multiple times to achieve your long-term weight goals, recommending a gap of 5–7 days between cycles.		</div>
+	</div>
+</div>
+  </body>
+</html>

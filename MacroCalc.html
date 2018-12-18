@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Macronutrient Calculator</title>
+  <style> 
+  table,td,th {
+      border: 1px solid black;
+  }
+  </style>
+	<link rel="stylesheet" type="text/css" href="register.css">
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Macronutrient Calculator</h1> 
+  Calories  <input type="number" id="calories"> per day <br>
+
+  Carbohydrates <input type="number" id="carbs"> % <br>
+   Protein <input type="number" id="protein">%  <br>
+ fat <input type="number" id="fat">% <br> 
+
+  <button onclick="getMacros()"> Click</button>
+
+  <p id="output"></p>
+  <table>
+    <tr>
+        <th> </th>
+        <th>Carbohydrates </th> 
+        <th>protein</th>
+        <th>fat</th>
+    </tr>
+    <tr>
+        <td>grams per day</td>
+        <td id="carb1"> grams of Carbohydrates</td>
+        <td id="protein1"> grams of Protein </td>
+        <td id="fat1">grams of Fats</td>
+    </tr>
+    <tr>
+        <td>Calories per day</td>
+        <td id="carbCal">Calories that are taken up by Carbohydrates</td>
+        <td id="proteinCal">Calories that are taken up by protein</td>
+        <td id="fatCal">calories that are taken up by fats
+        </td>
+    </tr>
+  </table>
+</body>
+</html>
